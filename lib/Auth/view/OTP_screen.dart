@@ -1,15 +1,8 @@
-import 'package:fast_trade/Utilities/AppColors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import '../../Utilities/CustomCrcleContainer.dart';
-import '../../Utilities/customTextField.dart';
 import '../../Utilities/styles.dart';
 import '../../Utilities/widgets.dart';
-import '../../home_screen/view/MainScreen.dart';
-import '../../home_screen/view/home_tabbar.dart';
 import 'Register.dart';
 
 class OTPScreen extends StatefulWidget {
@@ -94,7 +87,7 @@ class _OTPScreenState extends State<OTPScreen> {
                         counterText: '',
                         border: InputBorder.none,
                          ),
-                    style: GoogleFonts.roboto(color: Colors.white),
+                    // style: GoogleFonts.roboto(color: Colors.white),
                   ),
                 ),
                 Container(
@@ -125,7 +118,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     decoration: InputDecoration(
                         counterText: '',
                         border:  InputBorder.none,),
-                    style: GoogleFonts.roboto(color: Colors.white),
+                    // style: GoogleFonts.roboto(color: Colors.white),
                   ),
                 ),
                 Container(
@@ -156,7 +149,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     decoration: InputDecoration(
                         counterText: '',
                       border: InputBorder.none,),
-                    style: GoogleFonts.roboto(color: Colors.white),
+                    // style: GoogleFonts.roboto(color: Colors.white),
                   ),
                 ),
                 Container(
@@ -187,7 +180,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     decoration: InputDecoration(
                         counterText: '',
                       border: InputBorder.none,),
-                    style: GoogleFonts.roboto(color: Colors.white),
+                    // style: GoogleFonts.roboto(color: Colors.white),
                   ),
                 ),
               ],

@@ -1,6 +1,5 @@
 import 'package:fast_trade/Utilities/styles.dart';
 import 'package:flutter/material.dart';
- import 'package:google_fonts/google_fonts.dart';
 
 //button style
 
@@ -55,11 +54,11 @@ class _ButtonState extends State<Button> {
           fit: BoxFit.contain,
           child: Text(
             widget.text,
-            style: GoogleFonts.roboto(
-                fontSize: media.width * eighteen,
-                color: (widget.textcolor != null) ? widget.textcolor : page,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1),
+            // style: GoogleFonts.roboto(
+            //     fontSize: media.width * eighteen,
+            //     color: (widget.textcolor != null) ? widget.textcolor : page,
+            //     fontWeight: FontWeight.bold,
+            //     letterSpacing: 1),
           ),
         ),
       ),
@@ -131,12 +130,13 @@ class _InputFieldState extends State<InputField> {
                 )
               : null,
           hintText: widget.text,
-          hintStyle: GoogleFonts.roboto(
-            fontSize: media.width * sixteen,
-            color:
-                (isDarkTheme == true) ? textColor.withOpacity(0.4) : hintColor,
-          )),
-      style: GoogleFonts.roboto(color: textColor),
+          // hintStyle: GoogleFonts.roboto(
+          //   fontSize: media.width * sixteen,
+          //   color:
+          //       (isDarkTheme == true) ? textColor.withOpacity(0.4) : hintColor,
+          // )
+      ),
+      // style: GoogleFonts.roboto(color: textColor),
       onChanged: widget.onTap,
     );
   }
