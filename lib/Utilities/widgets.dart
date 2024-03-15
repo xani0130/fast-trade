@@ -55,7 +55,7 @@ class _ButtonState extends State<Button> {
           child: Text(
             widget.text,
             // style: GoogleFonts.roboto(
-            //     fontSize: media.width * eighteen,
+            //     fontSize: width * eighteen,
             //     color: (widget.textcolor != null) ? widget.textcolor : page,
             //     fontWeight: FontWeight.bold,
             //     letterSpacing: 1),
@@ -131,7 +131,7 @@ class _InputFieldState extends State<InputField> {
               : null,
           hintText: widget.text,
           // hintStyle: GoogleFonts.roboto(
-          //   fontSize: media.width * sixteen,
+          //   fontSize: width * sixteen,
           //   color:
           //       (isDarkTheme == true) ? textColor.withOpacity(0.4) : hintColor,
           // )

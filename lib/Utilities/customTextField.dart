@@ -1,7 +1,6 @@
 import 'package:fast_trade/Utilities/styles.dart';
 import 'package:flutter/material.dart';
 
-import 'AppColors.dart';
 
 class CustomizeTextField extends StatelessWidget {
   final String? hintText;
@@ -36,7 +35,7 @@ class CustomizeTextField extends StatelessWidget {
     return TextField(
       style: TextStyle(color: Colors.white),
       enabled: enble,
-      cursorColor: AppColors.white,
+      cursorColor: Colors.white,
       controller: controller,
       obscureText: obscureText ?? false,
       keyboardType: isKeyboardType,
@@ -108,14 +107,14 @@ class CustomizeTextField1 extends StatelessWidget {
           decoration: InputDecoration(
             disabledBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color: AppColors.grey,
+                color: Colors.grey,
                 width: 1,
               ),
               borderRadius: BorderRadius.circular(18),
             ),
             enabledBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color: AppColors.voilet,
+                color:  Colors.white,
                 width: 1,
               ),
               borderRadius: BorderRadius.circular(18),
@@ -124,11 +123,11 @@ class CustomizeTextField1 extends StatelessWidget {
               borderSide: const BorderSide(color: Color(0xffE8ECF4), width: 1),
               borderRadius: BorderRadius.circular(10),
             ),
-            fillColor: AppColors.white,
+            fillColor: Colors.white,
             filled: true,
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
-            hintStyle: const TextStyle(color: AppColors.grey),
+            hintStyle: const TextStyle(color: Colors.grey),
             hintText: hintText,
             labelText: labelText,
             labelStyle: const TextStyle(

@@ -1,5 +1,4 @@
-import 'package:fast_trade/Utilities/AppColors.dart';
-import 'package:flutter/cupertino.dart';
+ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../Utilities/CustomCrcleContainer.dart';

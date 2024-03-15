@@ -67,7 +67,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     borderRadius: BorderRadius.circular(8)
                   ),
                   alignment: Alignment.center,
-                  width: media.width * 0.12,
+                  width: width * 0.12,
 
                   child: TextFormField(
                     cursorColor: Colors.white,
@@ -96,7 +96,7 @@ class _OTPScreenState extends State<OTPScreen> {
                       borderRadius: BorderRadius.circular(8)
                   ),
                   alignment: Alignment.center,
-                  width: media.width * 0.12,
+                  width: width * 0.12,
                   child: TextFormField(
                     cursorColor: Colors.white,
                     onChanged: (val) {
@@ -127,7 +127,7 @@ class _OTPScreenState extends State<OTPScreen> {
                       borderRadius: BorderRadius.circular(8)
                   ),
                   alignment: Alignment.center,
-                  width: media.width * 0.12,
+                  width: width * 0.12,
                   child: TextFormField(
                     cursorColor: Colors.white,
                     onChanged: (val) {
@@ -158,7 +158,7 @@ class _OTPScreenState extends State<OTPScreen> {
                       borderRadius: BorderRadius.circular(8)
                   ),
                   alignment: Alignment.center,
-                  width: media.width * 0.12,
+                  width: width * 0.12,
                   child: TextFormField(
                     cursorColor: Colors.white,
                     onChanged: (val) {
