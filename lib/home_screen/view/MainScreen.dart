@@ -38,9 +38,9 @@ class MainScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text(
+                           Text(
                             'Double Your\nCrypto Gains',
-                            style: TextStyle(fontSize: 18, color: Colors.white),
+                            style: TextStyle(fontSize: 18, color: white),
                           ),
                           const SizedBox(
                             height: 6,
@@ -66,22 +66,22 @@ class MainScreen extends StatelessWidget {
                           children: [
                             CustomCircleAvtar(
                               title: 'Recharge',
-                              Iconimage: 'assets/images/google.png',
+                              Iconimage: 'assets/images/recharge.png',
                               onTap: () {},
                             ),
                             CustomCircleAvtar(
                               title: 'Withdraw',
-                              Iconimage: 'assets/images/google.png',
+                              Iconimage: 'assets/images/withdraw.png',
                               onTap: () {},
                             ),
                             CustomCircleAvtar(
                               title: 'Quantify',
-                              Iconimage: 'assets/images/google.png',
+                              Iconimage: 'assets/images/quantity.png',
                               onTap: () {},
                             ),
                             CustomCircleAvtar(
                               title: 'Partner',
-                              Iconimage: 'assets/images/google.png',
+                              Iconimage: 'assets/images/partner.png',
                               onTap: () {},
                             ),
                           ],
@@ -91,22 +91,22 @@ class MainScreen extends StatelessWidget {
                           children: [
                             CustomCircleAvtar(
                               title: 'Wallet',
-                              Iconimage: 'assets/images/google.png',
+                              Iconimage: 'assets/images/Wallet.png',
                               onTap: () {},
                             ),
                             CustomCircleAvtar(
                               title: 'Team',
-                              Iconimage: 'assets/images/google.png',
+                              Iconimage: 'assets/images/team.png',
                               onTap: () {},
                             ),
                             CustomCircleAvtar(
                               title: 'Invite',
-                              Iconimage: 'assets/images/google.png',
+                              Iconimage: 'assets/images/invite.png',
                               onTap: () {},
                             ),
                             CustomCircleAvtar(
                               title: 'Help',
-                              Iconimage: 'assets/images/google.png',
+                              Iconimage: 'assets/images/help.png',
                               onTap: () {},
                             ),
                           ],
@@ -128,25 +128,26 @@ class MainScreen extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text(
+                               Text(
                                 'Trade',
                                 style: TextStyle(
                                   fontSize: 15,
-                                  color: Colors.white
+                                  color: white
                                 ),
                               ),
                                Text(
                                 'Efficient And Stable',
                                 style: TextStyle(
                                   fontSize: 10,
-                                  color: Colors.white.withOpacity(0.5)
+                                  color: white.withOpacity(0.5)
                                 ),
                               ),
-                              const Align(
+                               Align(
                                 alignment: Alignment.centerRight,
                                 child: Image(
+                                  height: height * 0.15,
                                   image: AssetImage(
-                                    'assets/images/trading_graph.png',
+                                    'assets/images/trade.png',
                                   ),
                                 ),
                               ),
@@ -166,25 +167,26 @@ class MainScreen extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text(
+                               Text(
                                 'Invite Friend',
                                 style: TextStyle(
                                   fontSize: 15,
-                                  color: Colors.white
+                                  color:white,
                                 ),
                               ),
                                Text(
                                 'Earn Big Rewards',
                                 style: TextStyle(
                                   fontSize: 10,
-                                  color: Colors.white.withOpacity(0.5)
+                                  color: white.withOpacity(0.5)
                                 ),
                               ),
-                              const Align(
+                               Align(
                                 alignment: Alignment.centerRight,
                                 child: Image(
+                                  height: height * 0.15,
                                   image: AssetImage(
-                                    'assets/images/trading_graph.png',
+                                    'assets/images/invitefriend.png',
                                   ),
                                 ),
                               ),

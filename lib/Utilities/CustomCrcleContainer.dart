@@ -47,17 +47,15 @@ class CustomCircleAvtar extends StatelessWidget {
                   '$Iconimage',
                 ),
                 height: 20,
-                color: starColor,
               ),
             ),
           ),
         ),
-
         Padding(
           padding: const EdgeInsets.only(top: 6,bottom: 8),
           child: Text(
             '$title',
-            style: TextStyle(color: Colors.grey, fontSize: 12),
+            style: TextStyle(color: gray, fontSize: 12),
           ),
         ),
 
