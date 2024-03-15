@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import '../../Utilities/CustomCrcleContainer.dart';
 import '../../Utilities/customDrawer.dart';
 import '../../Utilities/styles.dart';
+import '../../customerService/view/CustomerService.dart';
+import '../../profilescreen/view/ProfileScreen.dart';
 import '../../quantity_screen/view/QuantityScreen.dart';
+import '../../teamscreen/view/TeamScreen.dart';
 import 'MainScreen.dart';
 
 class HomeTabbar extends StatefulWidget {
@@ -15,14 +18,9 @@ class _HomeTabbarState extends State<HomeTabbar> {
   static const List<Widget> _widgetOptions = <Widget>[
     MainScreen(),
     Quantity(),
-    Text('quant Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-    Text('team Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-    Text('service Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-    Text('Profile Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    TeamScreen(),
+    CustomerService(),
+    profilePage(),
   ];
   void _onItemTapped(int index) {
     setState(() {

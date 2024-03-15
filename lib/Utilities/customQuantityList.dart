@@ -7,9 +7,9 @@ class customlist extends StatelessWidget {
   String title;
   String subtitle;
   customlist({super.key,
-  required this.Iconimage,
-  required this.title,
-  required this.subtitle
+    required this.Iconimage,
+    required this.title,
+    required this.subtitle
   });
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class customlist extends StatelessWidget {
           subtitle: Text(
             subtitle,
             style:
-                TextStyle(fontSize: 12, color: Colors.white.withOpacity(0.5)),
+            TextStyle(fontSize: 12, color: Colors.white.withOpacity(0.5)),
           ),
         ),
       ],
