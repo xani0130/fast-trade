@@ -45,7 +45,7 @@ class _ButtonState extends State<Button> {
             backgroundColor: (widget.color != null) ? widget.color : buttonColor,
             fixedSize: const Size(300, 100),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50),),
+              borderRadius: BorderRadius.circular(10),),
             side:  BorderSide(
               color: (widget.borcolor != null) ? widget.borcolor : buttonColor,
               width: 1,
@@ -54,6 +54,7 @@ class _ButtonState extends State<Button> {
           fit: BoxFit.contain,
           child: Text(
             widget.text,
+            style: TextStyle(color: white),
             // style: GoogleFonts.roboto(
             //     fontSize: width * eighteen,
             //     color: (widget.textcolor != null) ? widget.textcolor : page,

@@ -2,6 +2,8 @@ import 'package:fast_trade/Utilities/customQuantityList.dart';
 import 'package:fast_trade/Utilities/styles.dart';
 import 'package:flutter/material.dart';
 
+import '../../Utilities/widgets/custom card.dart';
+
 class CustomerService extends StatelessWidget {
   const CustomerService({super.key});
 
@@ -18,7 +20,7 @@ class CustomerService extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: gray.withOpacity(0.3),
+                color: offline.withOpacity(0.3),
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Column(
@@ -52,34 +54,20 @@ class CustomerService extends StatelessWidget {
             SizedBox(
               height: height * 0.03,
             ),
-            Card(
-              elevation: 0,
-              color: gray.withOpacity(0.3),
-              child: ListTile(
-                contentPadding: EdgeInsets.all(5),
-                leading: Image.asset('assets/icons/Telegram.png',scale: 3,),
-                title: Text("Telegram",style: TextStyle(
-                  color: white
-                ),),
-                trailing: IconButton(onPressed: (){},
-                icon: Icon(Icons.arrow_forward_ios_outlined,color: gray,),),
-              ),
+            CustomServiceCard(
+              image: 'assets/icons/Telegram.png',
+              title: 'Telegram',
+              icon: Icons.arrow_forward_ios_outlined,
+              iconcolor: gray,
             ),
             SizedBox(
               height: height * 0.02,
             ),
-            Card(
-              elevation: 0,
-              color: gray.withOpacity(0.3),
-              child: ListTile(
-                contentPadding: EdgeInsets.all(5),
-                leading: Image.asset('assets/icons/Whatsapp.png',scale: 3,),
-                title: Text("WhatsApp",style: TextStyle(
-                    color: white
-                ),),
-                trailing: IconButton(onPressed: (){},
-                  icon: Icon(Icons.arrow_forward_ios_outlined,color: gray,),),
-              ),
+            CustomServiceCard(
+              image: 'assets/icons/Whatsapp.png',
+              title: 'WhatsApp',
+              icon: Icons.arrow_forward_ios_outlined,
+              iconcolor: gray,
             ),
           ],
         ),

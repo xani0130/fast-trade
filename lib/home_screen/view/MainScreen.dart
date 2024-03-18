@@ -1,9 +1,12 @@
+import 'package:fast_trade/home_screen/view/Wallet.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import '../../Utilities/CustomCrcleContainer.dart';
 import '../../Utilities/customDrawer.dart';
 import '../../Utilities/styles.dart';
 import '../../Utilities/widgets/dialog_box.dart';
+import 'RechargeScreen.dart';
+import 'WithdrawScreen.dart';
 import 'coins_list_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -85,12 +88,22 @@ class _MainScreenState extends State<MainScreen> {
                                   CustomCircleAvtar(
                                     title: 'Recharge',
                                     Iconimage: 'assets/images/recharge.png',
-                                    onTap: () {},
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => RechargeScreen()),
+                                      );
+                                    },
                                   ),
                                   CustomCircleAvtar(
                                     title: 'Withdraw',
                                     Iconimage: 'assets/images/withdraw.png',
-                                    onTap: () {},
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => WithdrawScreen()),
+                                      );
+                                    },
                                   ),
                                   CustomCircleAvtar(
                                     title: 'Quantify',
@@ -111,7 +124,12 @@ class _MainScreenState extends State<MainScreen> {
                                   CustomCircleAvtar(
                                     title: 'Wallet',
                                     Iconimage: 'assets/images/Wallet.png',
-                                    onTap: () {},
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => Wallet()),
+                                      );
+                                    },
                                   ),
                                   CustomCircleAvtar(
                                     title: 'Team',

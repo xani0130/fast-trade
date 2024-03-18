@@ -20,7 +20,7 @@ class _HomeTabbarState extends State<HomeTabbar> {
     Quantity(),
     TeamScreen(),
     CustomerService(),
-    profilePage(),
+    ProfileScreen(),
   ];
   void _onItemTapped(int index) {
     setState(() {
