@@ -24,6 +24,7 @@ class customlist extends StatelessWidget {
             title,
             style: TextStyle(
               color: white,
+              fontSize: 12
             ),
           ),
           subtitle: Text(

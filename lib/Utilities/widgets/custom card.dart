@@ -6,17 +6,20 @@ class CustomServiceCard extends StatelessWidget {
   final String image;
   final String title;
   final IconData icon;
-  final Color iconcolor;
+  final Color? iconcolor;
+  final Color? imgColor;
 
   const CustomServiceCard(
       {super.key,
       required this.image,
       required this.title,
       required this.icon,
-      required this.iconcolor});
+       this.iconcolor, this.imgColor});
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Card(
       elevation: 0,
       color: offline.withOpacity(0.3),
@@ -24,7 +27,8 @@ class CustomServiceCard extends StatelessWidget {
         contentPadding: EdgeInsets.all(5),
         leading: Image.asset(
           image,
-          scale: 4
+          height: height * 0.05,
+          color: imgColor,
         ),
         title: Text(
           title,

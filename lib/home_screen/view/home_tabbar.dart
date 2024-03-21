@@ -6,7 +6,7 @@ import '../../customerService/view/CustomerService.dart';
 import '../../profilescreen/view/ProfileScreen.dart';
 import '../../quantity_screen/view/QuantityScreen.dart';
 import '../../teamscreen/view/TeamScreen.dart';
-import 'MainScreen.dart';
+import 'MainScreen/MainScreen.dart';
 
 class HomeTabbar extends StatefulWidget {
   @override

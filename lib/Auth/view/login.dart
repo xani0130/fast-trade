@@ -6,7 +6,7 @@ import '../../Utilities/CustomCrcleContainer.dart';
 import '../../Utilities/customTextField.dart';
 import '../../Utilities/styles.dart';
 import '../../Utilities/widgets.dart';
-import '../../home_screen/view/MainScreen.dart';
+import '../../home_screen/view/MainScreen/MainScreen.dart';
 import '../../home_screen/view/home_tabbar.dart';
 import 'Register.dart';
 import 'forgot_password.dart';

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../Auth/view/login.dart';
 import '../../Utilities/styles.dart';
@@ -596,7 +598,7 @@ class Help extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.1),
+                color: offline.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(15)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -754,10 +756,6 @@ class Help extends StatelessWidget {
                   )),
               trailing: Icon(Icons.arrow_forward_ios_outlined,color: gray.withOpacity(0.5),size: 14,),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
-                );
               }),
         ],
       ),

@@ -1,13 +1,8 @@
  import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../Utilities/CustomCrcleContainer.dart';
 import '../../Utilities/customTextField.dart';
 import '../../Utilities/styles.dart';
 import '../../Utilities/widgets.dart';
-import '../../home_screen/view/MainScreen.dart';
-import '../../home_screen/view/home_tabbar.dart';
-import 'Register.dart';
 
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({Key? key}) : super(key: key);

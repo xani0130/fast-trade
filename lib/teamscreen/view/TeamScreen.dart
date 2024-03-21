@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import '../../Utilities/styles.dart';
+import '../Model/TeamModel.dart';
+import 'TeamWidget.dart';
+
 class TeamScreen extends StatelessWidget {
   const TeamScreen({super.key});
 
 // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:MyCustomTab(),
+      home: MyCustomTab(),
     );
   }
 }
@@ -39,32 +42,44 @@ class _MyCustomTabState extends State<MyCustomTab> {
                 children: [
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(15),
                       width: width * 0.2,
                       decoration: BoxDecoration(
-                        color:  offline.withOpacity(0.3),
+                        color: offline.withOpacity(0.3),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text("Team", style:
-                          TextStyle(fontSize: 16, color: Colors.white.withOpacity(0.5)),),
+                          Text(
+                            "Team",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white.withOpacity(0.5)),
+                          ),
                           SizedBox(
                             height: height * 0.017,
                           ),
-                          Text("\$ 456.908", style:
-                          TextStyle(fontSize: 20, color: white),),
+                          Text(
+                            "\$ 456.908",
+                            style: TextStyle(fontSize: 20, color: white),
+                          ),
                           SizedBox(
                             height: height * 0.03,
                           ),
-                          Text("Total Member", style:
-                          TextStyle(fontSize: 16, color: Colors.white.withOpacity(0.5)),),
+                          Text(
+                            "Total Member",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white.withOpacity(0.5)),
+                          ),
                           SizedBox(
                             height: height * 0.017,
                           ),
-                          Text("06", style:
-                          TextStyle(fontSize: 20, color: white),),
+                          Text(
+                            "06",
+                            style: TextStyle(fontSize: 20, color: white),
+                          ),
                         ],
                       ),
                     ),
@@ -74,33 +89,55 @@ class _MyCustomTabState extends State<MyCustomTab> {
                   ),
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                        color:  offline.withOpacity(0.3),
+                        color: offline.withOpacity(0.3),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Partner", style:
-                          TextStyle(fontSize: 16, color: Colors.white.withOpacity(0.5)),),
+                          Text(
+                            "Partner",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white.withOpacity(0.5)),
+                          ),
                           ListTile(
                             contentPadding: EdgeInsets.zero,
                             leading: CircleAvatar(
                               radius: 18,
                               backgroundColor: starColor,
-                              child: CircleAvatar(
+                              child: const CircleAvatar(
                                 radius: 15,
-                                backgroundImage: AssetImage('assets/images/person.jfif'),
+                                backgroundImage:
+                                    AssetImage('assets/images/person.jfif'),
                               ),
                             ),
-                            title: Text('John Robert',style: TextStyle(fontSize: 13,color: white,fontWeight: FontWeight.bold),),
-                            subtitle: Text('02 year Partnership',style: TextStyle(fontSize: 8,color: Colors.white.withOpacity(0.5)),),
+                            title: Text(
+                              'John Robert',
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            subtitle: Text(
+                              '02 year Partnership',
+                              style: TextStyle(
+                                  fontSize: 8,
+                                  color: Colors.white.withOpacity(0.5)),
+                            ),
                           ),
-                          Text("Total Earning", style:
-                          TextStyle(fontSize: 16, color: Colors.white.withOpacity(0.5)),),
-                          Text("\$ 235.768", style:
-                          TextStyle(fontSize: 20, color: white),),
+                          Text(
+                            "Total Earning",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white.withOpacity(0.5)),
+                          ),
+                          Text(
+                            "\$ 235.768",
+                            style: TextStyle(fontSize: 20, color: white),
+                          ),
                         ],
                       ),
                     ),
@@ -111,32 +148,31 @@ class _MyCustomTabState extends State<MyCustomTab> {
                 height: height * 0.02,
               ),
               Container(
-                padding: EdgeInsets.only(left: 15,right: 15,top: 7,bottom: 7),
+                padding: const EdgeInsets.only(
+                    left: 15, right: 15, top: 7, bottom: 7),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20), color:Colors.white.withOpacity(0.1)),
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white.withOpacity(0.1)),
                 child: TabBar(
                   indicator: BoxDecoration(
-                    color:starColor,
+                    color: starColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   labelColor: white,
                   dividerColor: Colors.black,
                   // ignore: prefer_const_literals_to_create_immutables
                   tabs: [
-                    Tab(
+                    const Tab(
                       text: 'Team Member',
                     ),
-                    Tab(
+                    const Tab(
                       text: "Team Contribution",
                     ),
-
                   ],
                 ),
               ),
-              Flexible(
-                child: TabBarView(
-                    physics: BouncingScrollPhysics(),
-                    children: [
+              const Flexible(
+                child: TabBarView(physics: BouncingScrollPhysics(), children: [
                   TeamMember(),
                   TeamContribution(),
                 ]),
@@ -148,19 +184,78 @@ class _MyCustomTabState extends State<MyCustomTab> {
     );
   }
 }
+
 class TeamMember extends StatelessWidget {
   const TeamMember({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Team Member",style: TextStyle(fontSize: 20),));
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    return ListView(
+      physics: const BouncingScrollPhysics(),
+      shrinkWrap: true,
+      children: [
+        ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: TeamData().teamserviceDatadetails.length,
+            itemBuilder: (BuildContext context, int index) {
+              TeamDetails dailyteamDatadetails =
+                  TeamData().teamserviceDatadetails[index];
+              return TeamWidget(teamdetail: dailyteamDatadetails);
+            }),
+      ],
+    );
   }
 }
+
 class TeamContribution extends StatelessWidget {
   const TeamContribution({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Team Contribution",style: TextStyle(fontSize: 20),));
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    return ListView(
+      physics: const BouncingScrollPhysics(),
+      shrinkWrap: true,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(10),
+          child: Row(
+            children: [
+              Expanded(
+                  child: Text(
+                "Account",
+                style: TextStyle(color: white, fontSize: 16),
+              )),
+              SizedBox(
+                width: width * 0.33,
+              ),
+              Expanded(
+                  child: Text(
+                "VIP",
+                style: TextStyle(color: white, fontSize: 16),
+              )),
+              Expanded(
+                  child: Text(
+                "Reg.Time",
+                style: TextStyle(color: white, fontSize: 14),
+              ))
+            ],
+          ),
+        ),
+        ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: TeamData().teamserviceDatadetails.length,
+            itemBuilder: (BuildContext context, int index) {
+              TeamDetails dailyteamDatadetails =
+                  TeamData().teamserviceDatadetails[index];
+              return TeamWidget(teamdetail: dailyteamDatadetails);
+            }),
+      ],
+    );
   }
 }

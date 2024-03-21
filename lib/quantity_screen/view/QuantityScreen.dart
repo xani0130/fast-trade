@@ -25,164 +25,173 @@ class _QuantityState extends State<Quantity> {
           children: [
            Positioned(child:  Padding(
              padding: EdgeInsets.only(left: 18, right: 18),
-             child: Column(
-               children: [
-                 Container(
-                   padding: EdgeInsets.all(10),
-                   decoration: BoxDecoration(
-                     color: offline.withOpacity(0.3),
-                     borderRadius: BorderRadius.circular(15),
-                   ),
-                   child: Column(
-                     children: [
-                       Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                         children: [
-                           Text(
-                             'Contact Amount',
-                             style: TextStyle(
-                                 fontSize: 12,
-                                 color: Colors.white.withOpacity(0.5)),
-                           ),
-                           Text(
-                             'Total Earning',
-                             style: TextStyle(
-                                 fontSize: 12,
-                                 color: Colors.white.withOpacity(0.5)),
-                           ),
-                           Text(
-                             'Total Assets',
-                             style: TextStyle(
-                                 fontSize: 12,
-                                 color: Colors.white.withOpacity(0.5)),
-                           ),
-                         ],
-                       ),
-                       SizedBox(
-                         height: height * 0.03,
-                       ),
-                       Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                         children: [
-                           Text(
-                             '\$ 120.543',
-                             style: TextStyle(
-                                 fontSize: 12,
-                                 color: Colors.white.withOpacity(0.5)),
-                           ),
-                           Text(
-                             '\$ 520.543',
-                             style: TextStyle(
-                                 fontSize: 12,
-                                 color: Colors.white.withOpacity(0.5)),
-                           ),
-                           Text(
-                             '\$ 750.432',
-                             style: TextStyle(
-                                 fontSize: 12,
-                                 color: Colors.white.withOpacity(0.5)),
-                           ),
-                         ],
-                       )
-                     ],
-                   ),
-                 ),
-                 SizedBox(
-                   height: height * 0.01,
-                 ),
-                 Image.asset('assets/images/BitCoinImage.png'),
-                 SizedBox(
-                   height: height * 0.01,
-                 ),
-                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                   Icon(
-                     Icons.cable,
-                     color: starColor,
-                   ),
-                   Text(
-                     "Current Level",
-                     style: TextStyle(color: white, fontSize: 18),
-                   ),
-                   Icon(
-                     Icons.cable,
-                     color: starColor,
-                   ),
-                 ]),
-                 SizedBox(
-                   height: height * 0.01,
-                 ),
-                 GestureDetector(
-                   onTap: (){
-                     setState(() {
-                       referalBox = true;
-                     });
-                   },
-                   child: Image.asset(
-                     'assets/icons/medal.png',
-                     scale: 4,
-                   ),
-                 ),
-                 SizedBox(
-                   height: height * 0.01,
-                 ),
-                 Container(
-                   decoration: BoxDecoration(
-                     color:  offline.withOpacity(0.3),
-                     borderRadius: BorderRadius.circular(15),
-                   ),
-                   child: Column(
-                     children: [
-                       Row(
-                         children: [
-                           Expanded(
-                             child: customlist(
-                               Iconimage: 'assets/icons/quantity1.png',
-                               title: '05',
-                               subtitle: 'Times/Day',
+             child: SingleChildScrollView(
+               child: Column(
+                 children: [
+                   Container(
+                     padding: EdgeInsets.all(10),
+                     decoration: BoxDecoration(
+                       color: offline.withOpacity(0.3),
+                       borderRadius: BorderRadius.circular(15),
+                     ),
+                     child: Column(
+                       children: [
+                         SizedBox(
+                           height: height * 0.03,
+                         ),
+                         Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                           children: [
+                             Text(
+                               'Contact Amount',
+                               style: TextStyle(
+                                   fontSize: 12,
+                                   color: Colors.white.withOpacity(0.5)),
                              ),
-                           ),
-                           Expanded(
-                             child: customlist(
-                               Iconimage: 'assets/icons/1.05-1.55.png',
-                               title: '1.05 - 1.55%',
-                               subtitle: 'Profit Ratio',
+                             Text(
+                               'Total Earning',
+                               style: TextStyle(
+                                   fontSize: 12,
+                                   color: Colors.white.withOpacity(0.5)),
                              ),
-                           ),
-                         ],
-                       ),
-                       Row(
-                         children: [
-                           Expanded(
-                             child: customlist(
-                               Iconimage: 'assets/icons/08Usdt.png',
-                               title: '08 USDT',
-                               subtitle: 'Promo Reward',
+                             Text(
+                               'Total Assets',
+                               style: TextStyle(
+                                   fontSize: 12,
+                                   color: Colors.white.withOpacity(0.5)),
                              ),
-                           ),
-                           Expanded(
-                             child: customlist(
-                               Iconimage: 'assets/icons/100.00-200.00.png',
-                               title: '100.00 - 200.00',
-                               subtitle: 'Balance',
+                           ],
+                         ),
+                         SizedBox(
+                           height: height * 0.03,
+                         ),
+                         Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                           children: [
+                             Text(
+                               '\$ 120.543',
+                               style: TextStyle(
+                                   fontSize: 12,
+                                   color: Colors.white.withOpacity(0.5)),
                              ),
-                           ),
+                             Text(
+                               '\$ 520.543',
+                               style: TextStyle(
+                                   fontSize: 12,
+                                   color: Colors.white.withOpacity(0.5)),
+                             ),
+                             Text(
+                               '\$ 750.432',
+                               style: TextStyle(
+                                   fontSize: 12,
+                                   color: Colors.white.withOpacity(0.5)),
+                             ),
+                           ],
+                         )
+                       ],
+                     ),
+                   ),
+                   SizedBox(
+                     height: height * 0.03,
+                   ),
+                   Image.asset('assets/images/BitCoinImage.png'),
+                   SizedBox(
+                     height: height * 0.02,
+                   ),
+                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                     Icon(
+                       Icons.cable,
+                       color: starColor,
+                     ),
+                     Text(
+                       "Current Level",
+                       style: TextStyle(color: white, fontSize: 18),
+                     ),
+                     Icon(
+                       Icons.cable,
+                       color: starColor,
+                     ),
+                   ]),
+                   SizedBox(
+                     height: height * 0.02,
+                   ),
+                   GestureDetector(
+                     onTap: (){
+                       setState(() {
+                         referalBox = true;
+                       });
+                     },
+                     child: Image.asset(
+                       'assets/icons/medal.png',
+                       scale: 4,
+                     ),
+                   ),
+                   SizedBox(
+                     height: height * 0.03,
+                   ),
+                   Container(
+                     padding: EdgeInsets.zero,
+                     decoration: BoxDecoration(
+                       color:  offline.withOpacity(0.3),
+                       borderRadius: BorderRadius.circular(15),
+                     ),
+                     child: Column(
+                       children: [
+                         Row(
+                           children: [
+                             Expanded(
+                               child: customlist(
+                                 Iconimage: 'assets/icons/quantity1.png',
+                                 title: '05',
+                                 subtitle: 'Times/Day',
+                               ),
+                             ),
+                             Expanded(
+                               child: customlist(
+                                 Iconimage: 'assets/icons/1.05-1.55.png',
+                                 title: '1.05 - 1.55%',
+                                 subtitle: 'Profit Ratio',
+                               ),
+                             ),
+                           ],
+                         ),
+                         Row(
+                           children: [
+                             Expanded(
+                               child: customlist(
+                                 Iconimage: 'assets/icons/08Usdt.png',
+                                 title: '08 USDT',
+                                 subtitle: 'Promo Reward',
+                               ),
+                             ),
+                             Expanded(
+                               child: customlist(
+                                 Iconimage: 'assets/icons/100.00-200.00.png',
+                                 title: '10.0 - 20.0',
+                                 subtitle: 'Balance',
+                               ),
+                             ),
 
-                         ],
-                       ),
-                       customlist(
-                         Iconimage: 'assets/icons/50.00usdt.png',
-                         title: '> 50.00 USDT',
-                         subtitle: 'Promo Conditions',
-                       ),
-                       customlist(
-                         Iconimage: 'assets/icons/120days.png',
-                         title: '120',
-                         subtitle: 'Days',
-                       ),
-                     ],
+                           ],
+                         ),
+                         customlist(
+                           Iconimage: 'assets/icons/50.00usdt.png',
+                           title: '> 50.00 USDT',
+                           subtitle: 'Promo Conditions',
+                         ),
+                         customlist(
+                           Iconimage: 'assets/icons/120days.png',
+                           title: '120',
+                           subtitle: 'Days',
+                         ),
+                       ],
+                     ),
                    ),
-                 ),
-               ],
+                   SizedBox(
+                     height: height * 0.02,
+                   )
+                 ],
+               ),
              ),
            )),
             (referalBox == true)

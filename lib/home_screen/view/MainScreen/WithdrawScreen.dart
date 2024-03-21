@@ -2,10 +2,10 @@ import 'package:fast_trade/Utilities/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../Utilities/customQuantityList.dart';
-import '../../Utilities/customTextField.dart';
-import '../../Utilities/widgets.dart';
-import '../../Utilities/widgets/custom card.dart';
+import '../../../Utilities/customQuantityList.dart';
+import '../../../Utilities/customTextField.dart';
+import '../../../Utilities/widgets.dart';
+import '../../../Utilities/widgets/custom card.dart';
 
 class WithdrawScreen extends StatefulWidget {
   const WithdrawScreen({super.key});
@@ -26,7 +26,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
           backgroundColor: gray1,
           title: Center(
             child: Text(
-              "Recharge",
+              "Withdraw",
               style: TextStyle(color: white),
             ),
           ),
@@ -37,72 +37,76 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
             Positioned(
                 child: Padding(
                   padding: EdgeInsets.only(left: 18, right: 18),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: height * 0.01,
-                      ),
-                      CustomServiceCard(
-                        image: 'assets/icons/payPal.png',
-                        title: 'Withdraw To Paypal',
-                        icon: Icons.radio_button_checked,
-                        iconcolor: starColor,
-                      ),
-                      SizedBox(
-                        height: height * 0.01,
-                      ),
-                      CustomServiceCard(
-                        image: 'assets/icons/Stripe.jpeg',
-                        title: 'Withdraw To Stripe',
-                        icon: Icons.radio_button_checked,
-                        iconcolor: gray,
-                      ),
-                      SizedBox(
-                        height: height * 0.01,
-                      ),
-                      CustomServiceCard(
-                        image: 'assets/icons/easyPaisa.png',
-                        title: 'Withdraw To EasyPaisa',
-                        icon: Icons.radio_button_checked,
-                        iconcolor: gray,
-                      ),
-                      SizedBox(
-                        height: height * 0.03,
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: offline.withOpacity(0.3)
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: height * 0.01,
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Withdraw Amount',style: TextStyle(color: white),),
-                            SizedBox(height: height *0.01,),
-                            CustomizeTextField(
-                              hintText: "Enter Amount Here",
-                            ),
-                            SizedBox(height: height *0.01,),
-                            Text('Note: Withdraw limit is \$ 100 per day!',style: TextStyle(color: white,fontSize: 10),),
-                          ],
+                        CustomServiceCard(
+                          image: 'assets/icons/binance.png',
+                          title: 'Withdraw To Binance',
+                          imgColor: starColor,
+                          icon: Icons.radio_button_checked,
+                          iconcolor: starColor,
                         ),
-                      ),
-                      SizedBox(
-                        height: height * 0.05,
-                      ),
-                      Button(
-                        onTap: () {
-                          setState(() {
-                            referalBox = true;
-                          });
-                        },
-                        text: 'WITHDRAW',
-                        color: starColor,
-                        textcolor: white,
-                        borcolor: starColor,
-                      )
-                    ],
+                        SizedBox(
+                          height: height * 0.01,
+                        ),
+                        CustomServiceCard(
+                          image: 'assets/icons/Stripe.jpeg',
+                          title: 'Withdraw To Stripe',
+                          icon: Icons.radio_button_checked,
+                          iconcolor: gray,
+                        ),
+                        SizedBox(
+                          height: height * 0.01,
+                        ),
+                        CustomServiceCard(
+                          image: 'assets/icons/easyPaisa.png',
+                          title: 'Withdraw To EasyPaisa',
+                          icon: Icons.radio_button_checked,
+                          iconcolor: gray,
+                        ),
+                        SizedBox(
+                          height: height * 0.03,
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: offline.withOpacity(0.3)
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Withdraw Amount',style: TextStyle(color: white),),
+                              SizedBox(height: height *0.01,),
+                              CustomizeTextField(
+                                hintText: "Enter Amount Here",
+                                isKeyboardType: TextInputType.phone,
+                              ),
+                              SizedBox(height: height *0.01,),
+                              Text('Note: Withdraw limit is \$ 100 per day!',style: TextStyle(color: white,fontSize: 10),),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: height * 0.05,
+                        ),
+                        Button(
+                          onTap: () {
+                            setState(() {
+                              referalBox = true;
+                            });
+                          },
+                          text: 'WITHDRAW',
+                          color: starColor,
+                          textcolor: white,
+                          borcolor: starColor,
+                        )
+                      ],
+                    ),
                   ),
                 )),
             (referalBox == true)
