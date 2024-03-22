@@ -38,8 +38,8 @@ class WalletData {
             InDecPercent: '14.03.23',
        ),
         WalletList(
-            image: 'assets/icons/BNB.png',
-            title: 'BTC',
+            image: 'assets/icons/binance.png',
+            title: 'BNB',
             currency: '/USDT',
             tradepercent: '12200.15',
             InDecPercent: '19.09.22',
@@ -59,8 +59,8 @@ class WalletData {
             InDecPercent: '01.07.22',
           ),
         WalletList(
-            image: 'assets/icons/BNB.png',
-            title: 'BTC',
+            image: 'assets/icons/binance.png',
+            title: 'BNB',
             currency: '/USDT',
             tradepercent: '12200.15',
             InDecPercent: '18.03.23',

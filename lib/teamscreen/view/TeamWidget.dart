@@ -42,31 +42,35 @@ class TeamWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          children: [
-                            CircleAvatar(
-                              radius: 15,
-                              backgroundColor: Colors.transparent,
-                              backgroundImage: AssetImage(
-                                (teamdetail.teamDataList?[index].image)
-                                    .toString(),
+                        Expanded(
+                          child: Row(
+                            children: [
+                              CircleAvatar(
+                                radius: 15,
+                                backgroundColor: Colors.transparent,
+                                backgroundImage: AssetImage(
+                                  (teamdetail.teamDataList?[index].image)
+                                      .toString(),
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              width: width * 0.03,
-                            ),
-                            Text(
-                              (teamdetail.teamDataList?[index].title)
-                                  .toString(),
-                              style: TextStyle(
-                                color: white,
-                                fontSize: 13,
+                              SizedBox(
+                                width: width * 0.01,
                               ),
-                            ),
-                          ],
+                              Expanded(
+                                child: Text(
+                                  (teamdetail.teamDataList?[index].title)
+                                      .toString(),
+                                  style: TextStyle(
+                                    color: white,
+                                    fontSize: 10,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         SizedBox(
-                          height: height * 0.01,
+                          width: width * 0.25,
                         ),
                         Image.asset(
                           (teamdetail
@@ -74,12 +78,17 @@ class TeamWidget extends StatelessWidget {
                               .toString(),
                           scale: 4,
                         ),
-                        Text(
-                          (teamdetail
-                              .teamDataList?[index].InDecPercent)
-                              .toString(),
-                          style: TextStyle(color: offline.withOpacity(0.8),fontSize: 10),
-                          textAlign: TextAlign.left,
+                        SizedBox(
+                          width: width * 0.25,
+                        ),
+                        Expanded(
+                          child: Text(
+                            (teamdetail
+                                .teamDataList?[index].InDecPercent)
+                                .toString(),
+                            style: TextStyle(color: offline.withOpacity(0.8),fontSize: 10),
+                            textAlign: TextAlign.left,
+                          ),
                         ),
                       ],
                     ),

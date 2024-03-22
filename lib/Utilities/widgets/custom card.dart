@@ -8,13 +8,14 @@ class CustomServiceCard extends StatelessWidget {
   final IconData icon;
   final Color? iconcolor;
   final Color? imgColor;
+  final dynamic onTap;
 
   const CustomServiceCard(
       {super.key,
       required this.image,
       required this.title,
       required this.icon,
-       this.iconcolor, this.imgColor});
+       this.iconcolor, this.imgColor, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class CustomServiceCard extends StatelessWidget {
           style: TextStyle(color: white,fontSize: 12),
         ),
         trailing: IconButton(
-          onPressed: () {},
+          onPressed: onTap,
           icon: Icon(
             icon,
             color: iconcolor,

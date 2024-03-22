@@ -36,8 +36,8 @@ class CoinsData {
             InDecPercent: '+1.33%',
             isColor: false),
         CoinsList(
-            image: 'assets/icons/BNB.png',
-            title: 'BTC',
+            image: 'assets/icons/binance.png',
+            title: 'BNB',
             currency: '/USDT',
             tradepercent: '12200.15',
             InDecPercent: '-1.21%',
@@ -57,8 +57,8 @@ class CoinsData {
             InDecPercent: '+1.33%',
             isColor: true),
         CoinsList(
-            image: 'assets/icons/BNB.png',
-            title: 'BTC',
+            image: 'assets/icons/binance.png',
+            title: 'BNB',
             currency: '/USDT',
             tradepercent: '12200.15',
             InDecPercent: '-1.21%',

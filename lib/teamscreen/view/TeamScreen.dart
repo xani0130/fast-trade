@@ -190,8 +190,7 @@ class TeamMember extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
+
     return ListView(
       physics: const BouncingScrollPhysics(),
       shrinkWrap: true,
@@ -215,44 +214,17 @@ class TeamContribution extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
     return ListView(
       physics: const BouncingScrollPhysics(),
       shrinkWrap: true,
       children: [
-        Padding(
-          padding: const EdgeInsets.all(10),
-          child: Row(
-            children: [
-              Expanded(
-                  child: Text(
-                "Account",
-                style: TextStyle(color: white, fontSize: 16),
-              )),
-              SizedBox(
-                width: width * 0.33,
-              ),
-              Expanded(
-                  child: Text(
-                "VIP",
-                style: TextStyle(color: white, fontSize: 16),
-              )),
-              Expanded(
-                  child: Text(
-                "Reg.Time",
-                style: TextStyle(color: white, fontSize: 14),
-              ))
-            ],
-          ),
-        ),
         ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             itemCount: TeamData().teamserviceDatadetails.length,
             itemBuilder: (BuildContext context, int index) {
               TeamDetails dailyteamDatadetails =
-                  TeamData().teamserviceDatadetails[index];
+              TeamData().teamserviceDatadetails[index];
               return TeamWidget(teamdetail: dailyteamDatadetails);
             }),
       ],

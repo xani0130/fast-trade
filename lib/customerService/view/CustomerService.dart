@@ -1,12 +1,22 @@
-import 'package:fast_trade/Utilities/customQuantityList.dart';
 import 'package:fast_trade/Utilities/styles.dart';
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import '../../Utilities/widgets/custom card.dart';
 
-class CustomerService extends StatelessWidget {
+class CustomerService extends StatefulWidget {
   const CustomerService({super.key});
 
+  @override
+  State<CustomerService> createState() => _CustomerServiceState();
+}
+
+class _CustomerServiceState extends State<CustomerService> {
+  final Uri _url = Uri.parse('https://flutter.dev');
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
+  }
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -58,7 +68,7 @@ class CustomerService extends StatelessWidget {
               image: 'assets/icons/Telegram.png',
               title: 'Telegram',
               icon: Icons.arrow_forward_ios_outlined,
-              iconcolor: gray,
+              iconcolor: gray, onTap: null,
             ),
             SizedBox(
               height: height * 0.02,
@@ -67,11 +77,14 @@ class CustomerService extends StatelessWidget {
               image: 'assets/icons/Whatsapp.png',
               title: 'WhatsApp',
               icon: Icons.arrow_forward_ios_outlined,
-              iconcolor: gray,
+              iconcolor: gray, onTap: (){
+              _launchUrl;
+            },
             ),
           ],
         ),
       ),
     );
   }
+
 }

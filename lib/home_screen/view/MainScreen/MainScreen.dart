@@ -6,11 +6,14 @@ import '../../../Utilities/CustomCrcleContainer.dart';
 import '../../../Utilities/customDrawer.dart';
 import '../../../Utilities/styles.dart';
 import '../../../Utilities/widgets/dialog_box.dart';
+import '../../../Utilities/CustomStepper.dart';
+import '../../../quantity_screen/view/QuantityScreen.dart';
+import '../../../teamscreen/view/TeamScreen.dart';
 import 'RechargeScreen.dart';
 import 'WithdrawScreen.dart';
 import '../coins_list_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flutter/services.dart';
 import '../../Model/CoinsdataModel.dart';
 
 class MainScreen extends StatefulWidget {
@@ -22,6 +25,8 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   bool referalBox = false;
+  String linkText = 'https://www.youtube.com/';
+  String codeText = '1kcvg546fg';
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +66,8 @@ class _MainScreenState extends State<MainScreen> {
                                 children: [
                                   Text(
                                     'Double Your\nCrypto Gains',
-                                    style: TextStyle(fontSize: 18, color: white),
+                                    style:
+                                        TextStyle(fontSize: 18, color: white),
                                   ),
                                   const SizedBox(
                                     height: 6,
@@ -88,7 +94,7 @@ class _MainScreenState extends State<MainScreen> {
                               children: [
                                 Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceAround,
+                                      MainAxisAlignment.spaceAround,
                                   children: [
                                     CustomCircleAvtar(
                                       title: 'Recharge',
@@ -107,7 +113,9 @@ class _MainScreenState extends State<MainScreen> {
                                     CustomCircleAvtar(
                                       title: 'Quantify',
                                       Iconimage: 'assets/images/quantity.png',
-                                      onTap: () {},
+                                      onTap: () {
+                                        Get.to(Quantity());
+                                      },
                                     ),
                                     CustomCircleAvtar(
                                       title: 'Partner',
@@ -118,19 +126,21 @@ class _MainScreenState extends State<MainScreen> {
                                 ),
                                 Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceAround,
+                                      MainAxisAlignment.spaceAround,
                                   children: [
                                     CustomCircleAvtar(
                                       title: 'Wallet',
                                       Iconimage: 'assets/images/Wallet.png',
                                       onTap: () {
-                                       Get.to(Wallet());
+                                        Get.to(Wallet());
                                       },
                                     ),
                                     CustomCircleAvtar(
                                       title: 'Team',
                                       Iconimage: 'assets/images/team.png',
-                                      onTap: () {},
+                                      onTap: () {
+                                        Get.to(TeamScreen());
+                                      },
                                     ),
                                     CustomCircleAvtar(
                                       title: 'Invite',
@@ -159,12 +169,13 @@ class _MainScreenState extends State<MainScreen> {
                                       color: offline.withOpacity(0.3),
                                       borderRadius: BorderRadius.circular(15)),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         'Trade',
-                                        style:
-                                        TextStyle(fontSize: 15, color: white),
+                                        style: TextStyle(
+                                            fontSize: 15, color: white),
                                       ),
                                       Text(
                                         'Efficient And Stable',
@@ -199,10 +210,11 @@ class _MainScreenState extends State<MainScreen> {
                                     padding: const EdgeInsets.all(10),
                                     decoration: BoxDecoration(
                                         color: offline.withOpacity(0.3),
-                                        borderRadius: BorderRadius.circular(15)),
+                                        borderRadius:
+                                            BorderRadius.circular(15)),
                                     child: Column(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           'Invite Friend',
@@ -244,11 +256,10 @@ class _MainScreenState extends State<MainScreen> {
                             child: ListView.builder(
                                 physics: const NeverScrollableScrollPhysics(),
                                 shrinkWrap: true,
-                                itemCount:  CoinsData().CoinsDatadetails.length,
+                                itemCount: CoinsData().CoinsDatadetails.length,
                                 itemBuilder: (BuildContext context, int index) {
                                   BitCoinsDetails dailycomplaintdetails =
-                                  CoinsData()
-                                      .CoinsDatadetails[index];
+                                      CoinsData().CoinsDatadetails[index];
                                   return CoinDetailWidget(
                                       dailycoinsdetail: dailycomplaintdetails);
                                 }),
@@ -305,80 +316,53 @@ class _MainScreenState extends State<MainScreen> {
                               color: Colors.grey.withOpacity(0.6)),
                           child: Column(
                             children: [
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                   Column(
-                                    children: [
-                                      const Image(
-                                        image: AssetImage(
-                                            'assets/icons/ref_msg.png'),
-                                        height: 50,
-                                      ),
-                                      SizedBox(
-                                        height: width * 0.02,
-                                      ),
-                                      Text('Invite\na friend',
-                                          textAlign: TextAlign.center,
+                              CustomStepper(),
+                              SizedBox(
+                                height: width * 0.05,
+                              ),
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: const Color(0xff868686),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          'Invitation Link',
                                           style: GoogleFonts.inter(
-                                            fontSize:
-                                            width * fourteen,
+                                            fontSize: width * sixteen,
                                             color: white,
-                                          ))
-                                    ],
-                                  ),
-                                  // Container(
-                                  //   height: 1,
-                                  //   width: width * 0.05,
-                                  //   color: Colors.white,
-                                  // ),
-                                   Column(
-                                    children: [
-                                      const Image(
-                                        image: AssetImage(
-                                            'assets/icons/ref_invite.png',),
-                                        height: 50,
-                                      ),
-                                      SizedBox(
-                                        height: width * 0.02,
-                                      ),
-                                      Text('Friend\nComplete\nRegistration',
-                                          textAlign: TextAlign.center,
-                                          style: GoogleFonts.inter(
-                                            fontSize:
-                                            width * fourteen,
-                                            color: white,
-                                          ))
-                                    ],
-                                  ),
-                                  // Container(
-                                  //   height: 1,
-                                  //   width: width * 0.05,
-                                  //   color: Colors.white,
-                                  // ),
-                                    Column(
-                                    children: [
-                                      const Image(
-                                        image: AssetImage(
-                                            'assets/icons/ref_earn.png'),
-                                        height: 50,
-                                      ),
-                                      SizedBox(
-                                        height: width * 0.02,
-                                      ),
-                                      Text(
-                                        'Get\nReward',
-                                        textAlign: TextAlign.center,
-                                          style: GoogleFonts.inter(
-                                            fontSize:
-                                            width * fourteen,
-                                            color: white,
-                                          )
-                                      )
-                                    ],
-                                  )
-                                ],
+                                          ),
+                                        ),
+                                        IconButton(
+                                            onPressed: () {
+                                              Clipboard.setData(ClipboardData(text: linkText)).then((value) {
+                                                snackBar();
+                                              });
+                                            },
+                                            icon: Icon(
+                                              Icons.copy_all,
+                                              color: theme,
+                                            ))
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: width * 0.01,
+                                    ),
+                                    Text(
+                                        linkText,
+                                        style: GoogleFonts.inter(
+                                          fontSize: width * fourteen,
+                                          color: white,
+                                        )),
+                                  ],
+                                ),
                               ),
                               SizedBox(
                                 height: width * 0.05,
@@ -387,75 +371,54 @@ class _MainScreenState extends State<MainScreen> {
                                 padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color:const Color(0xff868686),
+                                  color: const Color(0xff868686),
                                 ),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text('Invitation Link',
+                                        Text(
+                                          'Invitation Code',
                                           style: GoogleFonts.inter(
-                                            fontSize:
-                                            width * sixteen,
+                                            fontSize: width * sixteen,
                                             color: white,
-                                          ),),
-                                        Icon(Icons.copy_sharp,color: theme,)
+                                          ),
+                                        ),
+                                        IconButton(
+                                          onPressed: (){
+                                            Clipboard.setData(ClipboardData(text: codeText)).then((value) {
+                                              snackBar();
+                                            });
+                                          },
+                                          icon: Icon(
+                                            Icons.copy_all,
+                                            color: theme,
+                                          ),
+                                        )
                                       ],
                                     ),
                                     SizedBox(
                                       height: width * 0.01,
                                     ),
-                                     Text('https://www.youtube.com/',
-                                         style: GoogleFonts.inter(
-                                      fontSize:
-                                      width * fourteen,
-                                      color: white,
-                                    )),
-                                  ],
-                                ),
-                              ),
-                               SizedBox(
-                                height: width * 0.05,
-                              ),
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color:const Color(0xff868686),
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text('Invitation Code',
-                                          style: GoogleFonts.inter(
-                                            fontSize:
-                                            width * sixteen,
-                                            color: white,
-                                          ),),
-                                        Icon(Icons.copy_sharp,color: theme,)
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: width * 0.01,
-                                    ),
-                                     Text('1KCVG45',
-                                         style: GoogleFonts.inter(
-                                      fontSize:
-                                      width * fourteen,
-                                      color: white,
-                                    )),
+                                    Text(
+                                        codeText,
+                                        style: GoogleFonts.inter(
+                                          fontSize: width * fourteen,
+                                          color: white,
+                                        )),
                                   ],
                                 ),
                               ),
                               SizedBox(
                                 height: width * 0.05,
                               ),
-                              const Image(image: AssetImage('assets/images/ref_qr.png'),height: 120,)
+                              const Image(
+                                image: AssetImage('assets/images/ref_qr.png'),
+                                height: 120,
+                              )
                             ],
                           ),
                         )
@@ -465,5 +428,16 @@ class _MainScreenState extends State<MainScreen> {
                 : Container(),
           ],
         ));
+  }
+   snackBar(){
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        behavior: SnackBarBehavior.floating,
+        margin: EdgeInsets.only(left: 90,right: 90,bottom: 10),
+        elevation: 0,
+        content: Center(child: Text('Text copied to clipboard',style: TextStyle(fontSize: 10),)),
+        duration: Duration(seconds: 2),
+      ),
+    );
   }
 }

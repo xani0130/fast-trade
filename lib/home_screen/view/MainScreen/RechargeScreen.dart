@@ -1,5 +1,6 @@
 import 'package:fast_trade/Utilities/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../Utilities/customQuantityList.dart';
@@ -16,6 +17,7 @@ class RechargeScreen extends StatefulWidget {
 
 class _RechargeScreenState extends State<RechargeScreen> {
   bool referalBox = false;
+  final String rechargeText = 'Recharge Through Binance';
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -37,74 +39,59 @@ class _RechargeScreenState extends State<RechargeScreen> {
             Positioned(
                 child: Padding(
               padding: EdgeInsets.only(left: 18, right: 18),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: height * 0.01,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: height * 0.01,
+                  ),
+                  CustomServiceCard(
+                    image: 'assets/icons/binance.png',
+                    title: rechargeText,
+                    icon: Icons.copy_all,
+                    imgColor: starColor,
+                    iconcolor: starColor, onTap: (){
+                    Clipboard.setData(ClipboardData(text: rechargeText)).then((value) {
+                      snackBar();
+                    });
+                  },
+                  ),
+
+                  SizedBox(
+                    height: height * 0.03,
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: offline.withOpacity(0.3)
                     ),
-                    CustomServiceCard(
-                      image: 'assets/icons/binance.png',
-                      title: 'Recharge Through Binance',
-                      icon: Icons.radio_button_checked,
-                      imgColor: starColor,
-                      iconcolor: starColor,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Recharge Amount',style: TextStyle(color: white),),
+                        SizedBox(height: height *0.01,),
+                        CustomizeTextField(
+                          hintText: "Enter Amount Here",
+                          isKeyboardType: TextInputType.phone,
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      height: height * 0.01,
-                    ),
-                    CustomServiceCard(
-                      image: 'assets/icons/creditcard.png',
-                      title: 'Recharge Through Credit card',
-                      icon: Icons.radio_button_checked,
-                      iconcolor: gray,
-                    ),
-                    SizedBox(
-                      height: height * 0.01,
-                    ),
-                    CustomServiceCard(
-                      image: 'assets/icons/googlePay.png',
-                      title: 'Recharge Through Google pay',
-                      icon: Icons.radio_button_checked,
-                      iconcolor: gray,
-                    ),
-                    SizedBox(
-                      height: height * 0.03,
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: offline.withOpacity(0.3)
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Recharge Amount',style: TextStyle(color: white),),
-                          SizedBox(height: height *0.01,),
-                          CustomizeTextField(
-                            hintText: "Enter Amount Here",
-                            isKeyboardType: TextInputType.phone,
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: height * 0.05,
-                    ),
-                    Button(
-                      onTap: () {
-                        setState(() {
-                          referalBox = true;
-                        });
-                      },
-                      text: 'Recharge',
-                      color: starColor,
-                      textcolor: white,
-                      borcolor: starColor,
-                    )
-                  ],
-                ),
+                  ),
+                  SizedBox(
+                    height: height * 0.05,
+                  ),
+                  Button(
+                    onTap: () {
+                      setState(() {
+                        referalBox = true;
+                      });
+                    },
+                    text: 'Recharge',
+                    color: starColor,
+                    textcolor: white,
+                    borcolor: starColor,
+                  )
+                ],
               ),
             )),
             (referalBox == true)
@@ -174,5 +161,16 @@ class _RechargeScreenState extends State<RechargeScreen> {
                 : Container(),
           ],
         ));
+  }
+  snackBar(){
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        behavior: SnackBarBehavior.floating,
+        margin: EdgeInsets.only(left: 90,right: 90,bottom: 10),
+        elevation: 0,
+        content: Center(child: Text('Text copied to clipboard',style: TextStyle(fontSize: 10),)),
+        duration: Duration(seconds: 2),
+      ),
+    );
   }
 }

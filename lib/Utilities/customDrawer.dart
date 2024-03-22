@@ -16,7 +16,7 @@ class NavBar extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Drawer(
       width: width * 0.62,
-      backgroundColor: Colors.transparent,
+      backgroundColor: offline.withOpacity(0.5),
       child: ListView(
         children: [
           SizedBox(
