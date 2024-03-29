@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:fast_trade/Utilities/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -17,6 +19,7 @@ class _CustomerServiceState extends State<CustomerService> {
       throw Exception('Could not launch $_url');
     }
   }
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -68,7 +71,10 @@ class _CustomerServiceState extends State<CustomerService> {
               image: 'assets/icons/Telegram.png',
               title: 'Telegram',
               icon: Icons.arrow_forward_ios_outlined,
-              iconcolor: gray, onTap: null,
+              iconcolor: gray,
+              onTap: () {
+                whatsapp();
+              },
             ),
             SizedBox(
               height: height * 0.02,
@@ -77,9 +83,10 @@ class _CustomerServiceState extends State<CustomerService> {
               image: 'assets/icons/Whatsapp.png',
               title: 'WhatsApp',
               icon: Icons.arrow_forward_ios_outlined,
-              iconcolor: gray, onTap: (){
-              _launchUrl;
-            },
+              iconcolor: gray,
+              onTap: () {
+                whatsapp();
+              },
             ),
           ],
         ),
@@ -87,4 +94,24 @@ class _CustomerServiceState extends State<CustomerService> {
     );
   }
 
+  whatsapp() async {
+    var contact = "+923111655204";
+    var androidUrl = "whatsapp://send?phone=$contact&text=Hi, I need some help";
+    var iosUrl =
+        "https://wa.me/$contact?text=${Uri.parse('Hi, I need some help')}";
+
+    try {
+      if (Platform.isIOS) {
+        await launchUrl(Uri.parse(iosUrl));
+      } else {
+        await launchUrl(Uri.parse(androidUrl));
+      }
+    } on Exception {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("WhatsApp is not installed on the device"),
+        ),
+      );
+    }
+  }
 }

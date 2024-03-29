@@ -1,11 +1,8 @@
 import 'package:fast_trade/home_screen/view/MainScreen/WalletScreen/View/Wallet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import '../../../Utilities/CustomCrcleContainer.dart';
-import '../../../Utilities/customDrawer.dart';
 import '../../../Utilities/styles.dart';
-import '../../../Utilities/widgets/dialog_box.dart';
 import '../../../Utilities/CustomStepper.dart';
 import '../../../quantity_screen/view/QuantityScreen.dart';
 import '../../../teamscreen/view/TeamScreen.dart';
@@ -114,13 +111,14 @@ class _MainScreenState extends State<MainScreen> {
                                       title: 'Quantify',
                                       Iconimage: 'assets/images/quantity.png',
                                       onTap: () {
-                                        Get.to(Quantity());
+                                        Get.to(Quantity(showapp: true,));
                                       },
                                     ),
                                     CustomCircleAvtar(
                                       title: 'Partner',
                                       Iconimage: 'assets/images/partner.png',
-                                      onTap: () {},
+                                      onTap: () {
+                                      },
                                     ),
                                   ],
                                 ),

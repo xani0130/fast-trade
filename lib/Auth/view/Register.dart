@@ -1,3 +1,4 @@
+import 'package:fast_trade/Auth/ontroller.dart';
 import 'package:flutter/material.dart';
 
 import '../../Utilities/CustomCrcleContainer.dart';
@@ -10,7 +11,13 @@ import 'OTP_screen.dart';
 import 'login.dart';
 
 class Register extends StatelessWidget {
-  const Register({super.key});
+  Register({super.key});
+
+  final AuthController _authController = Get.put(AuthController());
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _cpasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +57,9 @@ class Register extends StatelessWidget {
               SizedBox(
                 height: height * 0.01,
               ),
-              const CustomizeTextField(
+              CustomizeTextField(
+                controller: _nameController,
+                maxText: 1,
                 hintText: "Your Full Name",
               ),
               SizedBox(
@@ -64,8 +73,10 @@ class Register extends StatelessWidget {
               SizedBox(
                 height: height * 0.01,
               ),
-              const CustomizeTextField(
+              CustomizeTextField(
                 hintText: "abcd@gmail.com",
+                controller: _emailController,
+                maxText: 1,
               ),
               SizedBox(
                 height: height * 0.02,
@@ -78,8 +89,22 @@ class Register extends StatelessWidget {
               SizedBox(
                 height: height * 0.01,
               ),
-              const CustomizeTextField(
-                hintText: "Your Password",
+              Obx(
+                () => CustomizeTextField(
+                  controller: _passwordController,
+                  obscureText: !_authController.isRegPassVisible.value,
+                  maxText: 1,
+                  suffixIcon: IconButton(
+                    onPressed: _authController.toggleRegPasswordVisibility,
+                    icon: Icon(
+                      _authController.isRegPassVisible.value
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                      color: offline,
+                    ),
+                  ),
+                  hintText: "Your Password",
+                ),
               ),
               SizedBox(
                 height: height * 0.02,
@@ -92,8 +117,22 @@ class Register extends StatelessWidget {
               SizedBox(
                 height: height * 0.01,
               ),
-              const CustomizeTextField(
-                hintText: "Re - Type Your Password",
+              Obx(
+                () => CustomizeTextField(
+                  controller: _cpasswordController,
+                  obscureText: !_authController.isRegCPassVisible.value,
+                  maxText: 1,
+                  suffixIcon: IconButton(
+                    onPressed: _authController.toggleRegCPasswordVisibility,
+                    icon: Icon(
+                      _authController.isRegCPassVisible.value
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                      color: offline,
+                    ),
+                  ),
+                  hintText: "Re-Type Password",
+                ),
               ),
               SizedBox(
                 height: height * 0.02,
@@ -118,7 +157,6 @@ class Register extends StatelessWidget {
               Button(
                 onTap: () {
                   Get.to(OTPScreen());
-
                 },
                 text: 'REGISTER',
                 color: starColor,
@@ -136,7 +174,7 @@ class Register extends StatelessWidget {
                   ),
                   TextButton(
                       onPressed: () {
-                      Get.to(LoginScreen());
+                        Get.to(LoginScreen());
                       },
                       child: Text(
                         'Sign In',

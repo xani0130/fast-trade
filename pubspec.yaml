@@ -39,7 +39,7 @@ dependencies:
   get: ^4.6.6
   gradient_borders: ^1.0.0
   syncfusion_flutter_charts: ^22.2.11
-  url_launcher: ^6.0.20
+  url_launcher: ^6.0.6
 
 dev_dependencies:
   flutter_test:

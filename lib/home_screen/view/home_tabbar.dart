@@ -17,8 +17,8 @@ class _HomeTabbarState extends State<HomeTabbar> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     MainScreen(),
-    Quantity(),
-    TeamScreen(),
+    Quantity(showapp: false,),
+    TeamScreen(showApp: false,),
     CustomerService(),
     ProfileScreen(),
   ];
@@ -34,6 +34,15 @@ class _HomeTabbarState extends State<HomeTabbar> {
       drawer: NavBar(),
       backgroundColor: gray1,
       appBar: AppBar(
+          leading: Builder(
+            builder: (BuildContext context) {
+              return GestureDetector(
+                  onTap: (){
+                    Scaffold.of(context).openDrawer();
+                  },
+                  child: Image.asset('assets/icons/menu.png',scale: 4.5,));
+            },
+          ),
           iconTheme: IconThemeData(color: white),
           elevation: 0,
           actions: const [

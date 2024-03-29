@@ -1,29 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../Utilities/styles.dart';
 import '../Model/TeamModel.dart';
 import 'TeamWidget.dart';
 
 class TeamScreen extends StatelessWidget {
-  const TeamScreen({super.key});
+  final bool showApp;
+  const TeamScreen({super.key,  this.showApp = true,});
 
 // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyCustomTab(),
+      home: Scaffold(
+        appBar: showApp ? AppBar(
+          leading: IconButton(
+            onPressed: (){
+              Get.back();
+            },
+            icon: Icon(Icons.arrow_back,color: white,),
+          ),
+          backgroundColor: gray1,
+          title: Center(child: Text('Team',style: TextStyle(color: white),)),
+          elevation: 0,
+        ) : null,
+        body: MyCustomTab(),
+      ),
     );
   }
 }
 
-class MyCustomTab extends StatefulWidget {
-  const MyCustomTab({super.key});
+class MyCustomTab extends StatelessWidget {
 
-  @override
-  State<MyCustomTab> createState() => _MyCustomTabState();
-}
+  const MyCustomTab({super.key,});
 
-class _MyCustomTabState extends State<MyCustomTab> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;

@@ -1,19 +1,19 @@
- import 'package:flutter/cupertino.dart';
+import 'package:fast_trade/Auth/ontroller.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../Utilities/CustomCrcleContainer.dart';
 import '../../Utilities/customTextField.dart';
 import '../../Utilities/styles.dart';
 import '../../Utilities/widgets.dart';
-import '../../home_screen/view/MainScreen/MainScreen.dart';
 import '../../home_screen/view/home_tabbar.dart';
 import 'Register.dart';
 import 'forgot_password.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  LoginScreen({Key? key}) : super(key: key);
 
+  final AuthController _authController = Get.put(AuthController());
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -51,8 +51,9 @@ class LoginScreen extends StatelessWidget {
             SizedBox(
               height: height * 0.01,
             ),
-
             CustomizeTextField(
+              controller: _authController.emailController,
+              maxText: 1,
               hintText: "abcd@gmail.com",
             ),
             SizedBox(
@@ -66,15 +67,28 @@ class LoginScreen extends StatelessWidget {
             SizedBox(
               height: height * 0.01,
             ),
-            CustomizeTextField(
-              hintText: "Your Password",
+            Obx(
+              () => CustomizeTextField(
+                controller: _authController.PassController,
+                obscureText: !_authController.isLoginPassVisible.value,
+                maxText: 1,
+                suffixIcon: IconButton(
+                  onPressed: _authController.toggleLoginPasswordVisibility,
+                  icon: Icon(_authController.isLoginPassVisible.value
+                      ? Icons.visibility
+                      : Icons.visibility_off,
+                  color: offline,
+                  ),
+                ),
+                hintText: "Your Password",
+              ),
             ),
             SizedBox(
               height: height * 0.01,
             ),
             Center(
               child: TextButton(
-                onPressed: (){
+                onPressed: () {
                   Get.to(ForgotPassword());
                 },
                 child: Text(
@@ -92,7 +106,6 @@ class LoginScreen extends StatelessWidget {
             Button(
               onTap: () {
                 Get.to(HomeTabbar());
-
               },
               text: 'SIGN IN',
               color: starColor,
@@ -183,12 +196,11 @@ class LoginScreen extends StatelessWidget {
                 ),
                 TextButton(
                     onPressed: () {
-                      Get.to( Register());
-
+                      Get.to(Register());
                     },
                     child: Text(
                       'Register',
-                      style: TextStyle(color: starColor,fontSize: 16),
+                      style: TextStyle(color: starColor, fontSize: 16),
                     ))
               ],
             ),
